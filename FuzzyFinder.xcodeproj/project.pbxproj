@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECF9E76F1E1F306E003125FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E76E1E1F306E003125FE /* AppDelegate.swift */; };
+		ECF9E7711E1F306E003125FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7701E1F306E003125FE /* ViewController.swift */; };
+		ECF9E7741E1F306E003125FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF9E7721E1F306E003125FE /* Main.storyboard */; };
+		ECF9E7771E1F306E003125FE /* FuzzyFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7751E1F306E003125FE /* FuzzyFinder.xcdatamodeld */; };
+		ECF9E7791E1F306E003125FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF9E7781E1F306E003125FE /* Assets.xcassets */; };
+		ECF9E77C1E1F306E003125FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF9E77A1E1F306E003125FE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ECF9E76B1E1F306E003125FE /* FuzzyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuzzyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF9E76E1E1F306E003125FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECF9E7701E1F306E003125FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECF9E7731E1F306E003125FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECF9E7761E1F306E003125FE /* FuzzyFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FuzzyFinder.xcdatamodel; sourceTree = "<group>"; };
+		ECF9E7781E1F306E003125FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECF9E77B1E1F306E003125FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECF9E77D1E1F306E003125FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECF9E7681E1F306E003125FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECF9E7621E1F306E003125FE = {
+			isa = PBXGroup;
+			children = (
+				ECF9E76D1E1F306E003125FE /* FuzzyFinder */,
+				ECF9E76C1E1F306E003125FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECF9E76C1E1F306E003125FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9E76B1E1F306E003125FE /* FuzzyFinder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECF9E76D1E1F306E003125FE /* FuzzyFinder */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9E76E1E1F306E003125FE /* AppDelegate.swift */,
+				ECF9E7701E1F306E003125FE /* ViewController.swift */,
+				ECF9E7721E1F306E003125FE /* Main.storyboard */,
+				ECF9E7781E1F306E003125FE /* Assets.xcassets */,
+				ECF9E77A1E1F306E003125FE /* LaunchScreen.storyboard */,
+				ECF9E77D1E1F306E003125FE /* Info.plist */,
+				ECF9E7751E1F306E003125FE /* FuzzyFinder.xcdatamodeld */,
+			);
+			path = FuzzyFinder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECF9E76A1E1F306E003125FE /* FuzzyFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECF9E7801E1F306E003125FE /* Build configuration list for PBXNativeTarget "FuzzyFinder" */;
+			buildPhases = (
+				ECF9E7671E1F306E003125FE /* Sources */,
+				ECF9E7681E1F306E003125FE /* Frameworks */,
+				ECF9E7691E1F306E003125FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FuzzyFinder;
+			productName = FuzzyFinder;
+			productReference = ECF9E76B1E1F306E003125FE /* FuzzyFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECF9E7631E1F306E003125FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Sabrina Wilbert";
+				TargetAttributes = {
+					ECF9E76A1E1F306E003125FE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = J5EPXUD2ER;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = ECF9E7661E1F306E003125FE /* Build configuration list for PBXProject "FuzzyFinder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECF9E7621E1F306E003125FE;
+			productRefGroup = ECF9E76C1E1F306E003125FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECF9E76A1E1F306E003125FE /* FuzzyFinder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECF9E7691E1F306E003125FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF9E77C1E1F306E003125FE /* LaunchScreen.storyboard in Resources */,
+				ECF9E7791E1F306E003125FE /* Assets.xcassets in Resources */,
+				ECF9E7741E1F306E003125FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECF9E7671E1F306E003125FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF9E7711E1F306E003125FE /* ViewController.swift in Sources */,
+				ECF9E76F1E1F306E003125FE /* AppDelegate.swift in Sources */,
+				ECF9E7771E1F306E003125FE /* FuzzyFinder.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ECF9E7721E1F306E003125FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECF9E7731E1F306E003125FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECF9E77A1E1F306E003125FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECF9E77B1E1F306E003125FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECF9E77E1E1F306E003125FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECF9E77F1E1F306E003125FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECF9E7811E1F306E003125FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J5EPXUD2ER;
+				INFOPLIST_FILE = FuzzyFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = QualityApps.FuzzyFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ECF9E7821E1F306E003125FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J5EPXUD2ER;
+				INFOPLIST_FILE = FuzzyFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = QualityApps.FuzzyFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECF9E7661E1F306E003125FE /* Build configuration list for PBXProject "FuzzyFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF9E77E1E1F306E003125FE /* Debug */,
+				ECF9E77F1E1F306E003125FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECF9E7801E1F306E003125FE /* Build configuration list for PBXNativeTarget "FuzzyFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF9E7811E1F306E003125FE /* Debug */,
+				ECF9E7821E1F306E003125FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ECF9E7751E1F306E003125FE /* FuzzyFinder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECF9E7761E1F306E003125FE /* FuzzyFinder.xcdatamodel */,
+			);
+			currentVersion = ECF9E7761E1F306E003125FE /* FuzzyFinder.xcdatamodel */;
+			path = FuzzyFinder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ECF9E7631E1F306E003125FE /* Project object */;
+}
