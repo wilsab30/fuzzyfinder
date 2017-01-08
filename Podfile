@@ -6,7 +6,7 @@ target 'FuzzyFinder' do
   use_frameworks!
 
   # Pods for FuzzyFinder
-    pod 'Firebase/Core'
+    pod 'Firebase'
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
