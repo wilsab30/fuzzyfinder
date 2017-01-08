@@ -16,6 +16,7 @@
 		ECF9E77C1E1F306E003125FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF9E77A1E1F306E003125FE /* LaunchScreen.storyboard */; };
 		ECF9E7861E21A188003125FE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7851E21A188003125FE /* SignInViewController.swift */; };
 		ECF9E7881E21C59B003125FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECF9E7871E21C59B003125FE /* GoogleService-Info.plist */; };
+		ECF9E78A1E21D043003125FE /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ECF9E77D1E1F306E003125FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECF9E7851E21A188003125FE /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		ECF9E7871E21C59B003125FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				ECF9E76E1E1F306E003125FE /* AppDelegate.swift */,
 				ECF9E7701E1F306E003125FE /* ViewController.swift */,
 				ECF9E7851E21A188003125FE /* SignInViewController.swift */,
+				ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */,
 				ECF9E7721E1F306E003125FE /* Main.storyboard */,
 				ECF9E7781E1F306E003125FE /* Assets.xcassets */,
 				ECF9E77A1E1F306E003125FE /* LaunchScreen.storyboard */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF9E78A1E21D043003125FE /* OwnerProfileViewController.swift in Sources */,
 				ECF9E7711E1F306E003125FE /* ViewController.swift in Sources */,
 				ECF9E7861E21A188003125FE /* SignInViewController.swift in Sources */,
 				ECF9E76F1E1F306E003125FE /* AppDelegate.swift in Sources */,
