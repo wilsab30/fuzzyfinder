@@ -17,6 +17,7 @@
 		ECF9E7861E21A188003125FE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7851E21A188003125FE /* SignInViewController.swift */; };
 		ECF9E7881E21C59B003125FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECF9E7871E21C59B003125FE /* GoogleService-Info.plist */; };
 		ECF9E78A1E21D043003125FE /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */; };
+		ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		ECF9E7851E21A188003125FE /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		ECF9E7871E21C59B003125FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
+		ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				ECF9E7701E1F306E003125FE /* ViewController.swift */,
 				ECF9E7851E21A188003125FE /* SignInViewController.swift */,
 				ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */,
+				ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */,
 				ECF9E7721E1F306E003125FE /* Main.storyboard */,
 				ECF9E7781E1F306E003125FE /* Assets.xcassets */,
 				ECF9E77A1E1F306E003125FE /* LaunchScreen.storyboard */,
@@ -229,6 +232,7 @@
 				ECF9E7711E1F306E003125FE /* ViewController.swift in Sources */,
 				ECF9E7861E21A188003125FE /* SignInViewController.swift in Sources */,
 				ECF9E76F1E1F306E003125FE /* AppDelegate.swift in Sources */,
+				ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */,
 				ECF9E7771E1F306E003125FE /* FuzzyFinder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
