@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PetProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -43,6 +44,8 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
         
         petPicImageView.image = image
         
+        petPicImageView.backgroundColor = UIColor.clear
+        
         imagePicker.dismiss(animated: true, completion: nil)
         
         
@@ -50,14 +53,33 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
-        imagePicker.sourceType = .savedPhotosAlbum
-        
+        imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+        
+        
     }
     
     
     
     @IBAction func addPetProfile(_ sender: Any) {
+        
+//        submitButton.isEnabled = false
+        
+        let imagesFolder = FIRStorage.storage().reference().child("images")
+        let imageData = UIImageJPEGRepresentation(petPicImageView.image!, 0.1)!
+        
+        
+        imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil, completion: {(metadata, error) in
+            
+            print("We tried to upload")
+            if error != nil {
+                print("We had an error\(error)")
+            }
+        })
+
+        
+//        dismiss(animated: true, completion: nil)
+        
     }
     
     
