@@ -18,6 +18,7 @@
 		ECF9E7881E21C59B003125FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECF9E7871E21C59B003125FE /* GoogleService-Info.plist */; };
 		ECF9E78A1E21D043003125FE /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */; };
 		ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */; };
+		ECF9E78F1E24245F003125FE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E78E1E24245F003125FE /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		ECF9E7871E21C59B003125FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerProfileViewController.swift; sourceTree = "<group>"; };
 		ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
+		ECF9E78E1E24245F003125FE /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		ECF9E7901E2471D0003125FE /* FuzzyFinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FuzzyFinder.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 		ECF9E76D1E1F306E003125FE /* FuzzyFinder */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9E7901E2471D0003125FE /* FuzzyFinder.entitlements */,
+				ECF9E78D1E242404003125FE /* Services */,
 				ECF9E76E1E1F306E003125FE /* AppDelegate.swift */,
 				ECF9E7701E1F306E003125FE /* ViewController.swift */,
 				ECF9E7851E21A188003125FE /* SignInViewController.swift */,
@@ -92,6 +97,14 @@
 				ECF9E7751E1F306E003125FE /* FuzzyFinder.xcdatamodeld */,
 			);
 			path = FuzzyFinder;
+			sourceTree = "<group>";
+		};
+		ECF9E78D1E242404003125FE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9E78E1E24245F003125FE /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		FA1A096CEA73EAE6BB6F7DCF /* Pods */ = {
@@ -140,6 +153,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = J5EPXUD2ER;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -229,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECF9E78A1E21D043003125FE /* OwnerProfileViewController.swift in Sources */,
+				ECF9E78F1E24245F003125FE /* DataService.swift in Sources */,
 				ECF9E7711E1F306E003125FE /* ViewController.swift in Sources */,
 				ECF9E7861E21A188003125FE /* SignInViewController.swift in Sources */,
 				ECF9E76F1E1F306E003125FE /* AppDelegate.swift in Sources */,
@@ -355,6 +374,7 @@
 			baseConfigurationReference = 8C278DB195BC03090B28BCBF /* Pods-FuzzyFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FuzzyFinder/FuzzyFinder.entitlements;
 				DEVELOPMENT_TEAM = J5EPXUD2ER;
 				INFOPLIST_FILE = FuzzyFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -369,6 +389,7 @@
 			baseConfigurationReference = 927E9904ED9B23025B8EC184 /* Pods-FuzzyFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FuzzyFinder/FuzzyFinder.entitlements;
 				DEVELOPMENT_TEAM = J5EPXUD2ER;
 				INFOPLIST_FILE = FuzzyFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,33 +7,42 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
     
     @IBOutlet var nameTextField: UITextField!
-    
     @IBOutlet var emailTextField: UITextField!
-    
-    
     @IBOutlet var passwordTextField: UITextField!
-    
-    
     @IBOutlet var submitCancelSeg: UISegmentedControl!
     
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        view.addSubview(loginButton)
+        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        loginButton.readPermissions = ["email","user_friends"]
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did logout of Facebook")
     }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        }
+        
+        print("Successfully logged in with Facebook")
+        
+    }
+
     
     
     
@@ -62,6 +71,7 @@ class SignInViewController: UIViewController {
             }
         })
     }
+    
     
     
     
