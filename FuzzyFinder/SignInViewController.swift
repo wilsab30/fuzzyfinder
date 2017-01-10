@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import FBSDKCoreKit
 import Firebase
 
 class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
@@ -26,6 +27,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
         loginButton.readPermissions = ["email","user_friends"]
+       
         
     }
     
@@ -38,16 +40,36 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
             print(error)
             return
         }
-        
-        print("Successfully logged in with Facebook")
-        
+        showEmailAddress()
+    }
+    
+    
+    func showEmailAddress() {
+        let accessToken = FBSDKAccessToken.current()
+        guard let accessTokenString = accessToken?.tokenString else {return}
+//        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            if error != nil {
+                print("Tried to create user!", error ?? "")
+                return
+            }
+            print("Successfully logged in with our user", user ?? "")
+        })
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
+            
+            if err != nil {
+                print("Failed to start graph request:", err ?? "")
+                return
+            }
+            print(result ?? "")
+        }
     }
 
     
     
     
     @IBAction func submitButton(_ sender: Any) {
-        
         FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
             print("We tried to sign in!")
             if error != nil {
