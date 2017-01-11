@@ -19,6 +19,7 @@
 		ECF9E78A1E21D043003125FE /* OwnerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */; };
 		ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */; };
 		ECF9E78F1E24245F003125FE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E78E1E24245F003125FE /* DataService.swift */; };
+		ECF9E7931E26BB0E003125FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7921E26BB0E003125FE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		ECF9E78E1E24245F003125FE /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		ECF9E7901E2471D0003125FE /* FuzzyFinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FuzzyFinder.entitlements; sourceTree = "<group>"; };
+		ECF9E7921E26BB0E003125FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		ECF9E76D1E1F306E003125FE /* FuzzyFinder */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9E7911E26BAD5003125FE /* Util */,
 				ECF9E7901E2471D0003125FE /* FuzzyFinder.entitlements */,
 				ECF9E78D1E242404003125FE /* Services */,
 				ECF9E76E1E1F306E003125FE /* AppDelegate.swift */,
@@ -105,6 +108,14 @@
 				ECF9E78E1E24245F003125FE /* DataService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		ECF9E7911E26BAD5003125FE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9E7921E26BB0E003125FE /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		FA1A096CEA73EAE6BB6F7DCF /* Pods */ = {
@@ -253,6 +264,7 @@
 				ECF9E76F1E1F306E003125FE /* AppDelegate.swift in Sources */,
 				ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */,
 				ECF9E7771E1F306E003125FE /* FuzzyFinder.xcdatamodeld in Sources */,
+				ECF9E7931E26BB0E003125FE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

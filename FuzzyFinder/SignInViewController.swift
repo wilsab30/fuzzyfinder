@@ -10,6 +10,9 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
+
+
 
 class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
     
@@ -31,6 +34,14 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
+            print("Found Keychain")
+            self.performSegue(withIdentifier: "ownerProfile", sender: nil)
+            
+        }
+    }
+    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did logout of Facebook")
     }
@@ -47,14 +58,20 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
     func showEmailAddress() {
         let accessToken = FBSDKAccessToken.current()
         guard let accessTokenString = accessToken?.tokenString else {return}
-//        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil {
                 print("Tried to create user!", error ?? "")
                 return
             }
             print("Successfully logged in with our user", user ?? "")
+            if let user = user {
+                
+                self.completeSignIn(id: user.uid)
+            
+            }
+            
         })
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
             
@@ -63,6 +80,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
                 return
             }
             print(result ?? "")
+            return
         }
     }
 
@@ -70,31 +88,45 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
     
     
     @IBAction func submitButton(_ sender: Any) {
-        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-            print("We tried to sign in!")
-            if error != nil {
-                print("We have an error:\(error)")
-                
-                FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
-                    print("We tried to create a user!")
-                    if error != nil {
-                        print("We have an error:\(error)")
-                    } else {
-                        print("User created succesfully")
-                        self.performSegue(withIdentifier: "ownerProfile", sender: nil)
-                    
+        
+        if let email = emailTextField.text, let pwd = passwordTextField.text {
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                print("We tried to sign in!")
+                if error == nil {
+                    print("Email user authenticated in Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
                     }
-                })
+                    
+                    self.performSegue(withIdentifier: "ownerProfile", sender: nil)
+                } else {
                 
-            } else {
-                print("Signed in succesfully")
-                self.performSegue(withIdentifier: "ownerProfile", sender: nil)
-                
-            }
-        })
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        print("We tried to create a user!")
+                            if error != nil {
+                                print("We have an error:\(error)")
+                        } else {
+                            print("User created succesfully")
+                                if let user = user {
+                                    self.completeSignIn(id: user.uid)
+                                }
+                            
+                            self.performSegue(withIdentifier: "ownerProfile", sender: nil)
+                        }
+                    })
+                }
+            })
+        }
+    }
+  
+    func completeSignIn(id: String){
+    
+    KeychainWrapper.standard.set(id, forKey: KEY_UID)
+    
     }
     
     
-    
-    
-}
+}//end of class
+                    
+
+
