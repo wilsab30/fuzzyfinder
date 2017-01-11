@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class OwnerProfileViewController: UIViewController {
 
@@ -16,11 +17,12 @@ class OwnerProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     @IBAction func logoutTouched(_ sender: Any) {
         
+        let KeychainResult = KeychainWrapper.standard.remove(key: KEY_UID)
+        print("Keychain removed")
         dismiss(animated: true, completion: nil)
-        
-        
     }
   
 

@@ -68,7 +68,8 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
             print("Successfully logged in with our user", user ?? "")
             if let user = user {
                 
-                self.completeSignIn(id: user.uid)
+                let userData = ["provider": credential.provider]
+                self.completeSignIn(id: user.uid, userData: userData)
             
             }
             
@@ -95,7 +96,9 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
                 if error == nil {
                     print("Email user authenticated in Firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                     
                     self.performSegue(withIdentifier: "ownerProfile", sender: nil)
@@ -108,7 +111,8 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
                         } else {
                             print("User created succesfully")
                                 if let user = user {
-                                    self.completeSignIn(id: user.uid)
+                                    let userData = ["provider": user.providerID]
+                                    self.completeSignIn(id: user.uid, userData: userData)
                                 }
                             
                             self.performSegue(withIdentifier: "ownerProfile", sender: nil)
@@ -119,9 +123,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
         }
     }
   
-    func completeSignIn(id: String){
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
     
-    KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+        KeychainWrapper.standard.set(id, forKey: KEY_UID)
     
     }
     

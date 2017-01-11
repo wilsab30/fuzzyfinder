@@ -258,7 +258,7 @@
                     <navigationItem key="navigationItem" id="Oqd-NX-zw8">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="ixL-AY-MYE">
                             <connections>
-                                <action selector="logoutTouched:" destination="WOf-7s-7jt" id="Oe2-Dw-ZTA"/>
+                                <action selector="logoutTouched:" destination="WOf-7s-7jt" id="rlt-NI-qEw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
