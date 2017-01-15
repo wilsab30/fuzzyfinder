@@ -70,6 +70,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
                 
                 let userData = ["provider": credential.provider]
                 self.completeSignIn(id: user.uid, userData: userData)
+                self.performSegue(withIdentifier: "ownerProfile", sender: nil)
             
             }
             
@@ -99,9 +100,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
                         
                         let userData = ["provider": user.providerID]
                         self.completeSignIn(id: user.uid, userData: userData)
+                        self.performSegue(withIdentifier: "ownerProfile", sender: nil)
                     }
                     
-                    self.performSegue(withIdentifier: "ownerProfile", sender: nil)
+                    
                 } else {
                 
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in

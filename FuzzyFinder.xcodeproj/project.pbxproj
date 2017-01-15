@@ -20,6 +20,9 @@
 		ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */; };
 		ECF9E78F1E24245F003125FE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E78E1E24245F003125FE /* DataService.swift */; };
 		ECF9E7931E26BB0E003125FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7921E26BB0E003125FE /* Constants.swift */; };
+		ECF9E7961E26FBC7003125FE /* Owner_profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7951E26FBC7003125FE /* Owner_profiles.swift */; };
+		ECF9E7C21E2AE94D003125FE /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7C11E2AE94D003125FE /* ComposeViewController.swift */; };
+		ECF9E7C41E2AF048003125FE /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7C31E2AF048003125FE /* MessagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		ECF9E78E1E24245F003125FE /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		ECF9E7901E2471D0003125FE /* FuzzyFinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FuzzyFinder.entitlements; sourceTree = "<group>"; };
 		ECF9E7921E26BB0E003125FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ECF9E7951E26FBC7003125FE /* Owner_profiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner_profiles.swift; sourceTree = "<group>"; };
+		ECF9E7C11E2AE94D003125FE /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		ECF9E7C31E2AF048003125FE /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +90,14 @@
 		ECF9E76D1E1F306E003125FE /* FuzzyFinder */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9E7941E26FBA6003125FE /* Model */,
 				ECF9E7911E26BAD5003125FE /* Util */,
 				ECF9E7901E2471D0003125FE /* FuzzyFinder.entitlements */,
 				ECF9E78D1E242404003125FE /* Services */,
 				ECF9E76E1E1F306E003125FE /* AppDelegate.swift */,
 				ECF9E7701E1F306E003125FE /* ViewController.swift */,
+				ECF9E7C11E2AE94D003125FE /* ComposeViewController.swift */,
+				ECF9E7C31E2AF048003125FE /* MessagesViewController.swift */,
 				ECF9E7851E21A188003125FE /* SignInViewController.swift */,
 				ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */,
 				ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */,
@@ -116,6 +125,14 @@
 				ECF9E7921E26BB0E003125FE /* Constants.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		ECF9E7941E26FBA6003125FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECF9E7951E26FBC7003125FE /* Owner_profiles.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		FA1A096CEA73EAE6BB6F7DCF /* Pods */ = {
@@ -257,13 +274,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF9E7961E26FBC7003125FE /* Owner_profiles.swift in Sources */,
 				ECF9E78A1E21D043003125FE /* OwnerProfileViewController.swift in Sources */,
 				ECF9E78F1E24245F003125FE /* DataService.swift in Sources */,
 				ECF9E7711E1F306E003125FE /* ViewController.swift in Sources */,
 				ECF9E7861E21A188003125FE /* SignInViewController.swift in Sources */,
+				ECF9E7C21E2AE94D003125FE /* ComposeViewController.swift in Sources */,
 				ECF9E76F1E1F306E003125FE /* AppDelegate.swift in Sources */,
 				ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */,
 				ECF9E7771E1F306E003125FE /* FuzzyFinder.xcdatamodeld in Sources */,
+				ECF9E7C41E2AF048003125FE /* MessagesViewController.swift in Sources */,
 				ECF9E7931E26BB0E003125FE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

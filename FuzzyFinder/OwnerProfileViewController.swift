@@ -8,13 +8,37 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import Firebase
+
 
 class OwnerProfileViewController: UIViewController {
-
+    
+    
+    
+    
+    var ownerProfiles = [OwnerData]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        DataService.ds.REF_OWNER_PROFILE.observe(.value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            
+                for snap in snapshot {
+                
+                    print("Snap\(snap)")
+                    if let ownerDataDict = snap.value as? Dictionary<String, Any>{
+                        let key = snap.key
+                        let owner_profile = OwnerData(ownerProfileId: key, ownerProfileData: ownerDataDict)
+                        self.ownerProfiles.append(owner_profile)
+                    
+                    }
+                
+                }
+            
+            }
+        })
+        
     }
 
     
@@ -26,4 +50,5 @@ class OwnerProfileViewController: UIViewController {
     }
   
 
+    @IBOutlet var listPetProfiles: [UITableView]!
 }
