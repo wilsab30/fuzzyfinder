@@ -48,17 +48,12 @@ class OwnerProfileViewController: UIViewController {
     @IBAction func submitOwnerInfo(_ sender: Any) {
         
         let userID = FIRAuth.auth()?.currentUser?.uid
-        ref?.child("owner_profiles").child("user").child("userId").setValue(userID)
-        ref?.child("owner_profiles").child("user").child("firstName").setValue(firstName.text)
-        ref?.child("owner_profiles").child("user").child("lastName").setValue(lastName.text)
-        ref?.child("owner_profiles").child("user").child("crossStreet").setValue(crossStreet.text)
+//        ref?.child("owner_profiles").child("userId").setValue(userID)
+        ref?.child("owner_profiles").child("users").child(userID!).child("firstName").setValue(firstName.text)
+        ref?.child("owner_profiles").child("users").child(userID!).child("lastName").setValue(lastName.text)
+        ref?.child("owner_profiles").child("users").child(userID!).child("crossStreet").setValue(crossStreet.text)
         
         dismiss(animated: true, completion: nil)
-
-        
-        
-        
-        
     }
     
     @IBAction func logoutTouched(_ sender: Any) {
