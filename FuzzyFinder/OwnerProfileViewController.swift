@@ -13,13 +13,17 @@ import Firebase
 
 class OwnerProfileViewController: UIViewController {
     
-    
+    @IBOutlet var firstName: UITextField!
+    @IBOutlet var lastName: UITextField!
+    @IBOutlet var crossStreet: UITextField!
+     var ref: FIRDatabaseReference?
     
     
     var ownerProfiles = [OwnerData]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = FIRDatabase.database().reference()
         DataService.ds.REF_OWNER_PROFILE.observe(.value, with: { (snapshot) in
             
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -41,10 +45,25 @@ class OwnerProfileViewController: UIViewController {
         
     }
 
+    @IBAction func submitOwnerInfo(_ sender: Any) {
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        ref?.child("owner_profiles").child("user").child("userId").setValue(userID)
+        ref?.child("owner_profiles").child("user").child("firstName").setValue(firstName.text)
+        ref?.child("owner_profiles").child("user").child("lastName").setValue(lastName.text)
+        ref?.child("owner_profiles").child("user").child("crossStreet").setValue(crossStreet.text)
+        
+        dismiss(animated: true, completion: nil)
+
+        
+        
+        
+        
+    }
     
     @IBAction func logoutTouched(_ sender: Any) {
         
-        let KeychainResult = KeychainWrapper.standard.remove(key: KEY_UID)
+        _ = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("Keychain removed")
         dismiss(animated: true, completion: nil)
     }
