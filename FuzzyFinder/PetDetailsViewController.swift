@@ -10,10 +10,45 @@ import UIKit
 
 class PetDetailsViewController: UIViewController {
 
+    @IBOutlet var detailImageView: UIImageView!
+    
+    @IBOutlet var detailName: UILabel!
+    
+    @IBOutlet var detailAge: UILabel!
+    
+    @IBOutlet var detailDescription: UITextView!
+    
+    var sentData1: String!
+    var sentData2: String!
+    var sentData3: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        detailName.text = sentData1
+        detailAge.text = sentData2
+        detailImageView.image = UIImage(named: sentData3)
+        
+        self.navigationItem.title = sentData1
+        
+        if detailName.text == "Birdie" {
+        
+            detailDescription.text = "the sweetest dog ever"
+        }
+        
+        if detailName.text == "Sammy"{
+            
+            detailDescription.text = "very shy but sweet"
+        }
+        
+        if detailName.text == "Kao"{
+            
+            detailDescription.text = "will bite, don't approach"
+        }
 
-        // Do any additional setup after loading the view.
+
+
+        
     }
 
     override func didReceiveMemoryWarning() {

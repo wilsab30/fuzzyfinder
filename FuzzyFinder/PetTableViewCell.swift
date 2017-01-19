@@ -9,8 +9,18 @@
 import UIKit
 
 class PetTableViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet var cellImageView: UIImageView!
+    
+    @IBOutlet var cellName: UILabel!
+    
+    @IBOutlet var cellAge: UILabel!
     override func awakeFromNib() {
+        
+        
+        
+        
         super.awakeFromNib()
         // Initialization code
     }
@@ -21,4 +31,5 @@ class PetTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }

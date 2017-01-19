@@ -16,12 +16,15 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBOutlet var petName: UITextField!
     
+    
     @IBOutlet var petBreed: UITextField!
     
     @IBOutlet var petDescription: UITextField!
     
+    @IBOutlet var petAge: UITextField!
     
     @IBOutlet var submitButton: UIButton!
+     var ref: FIRDatabaseReference?
     
     var imagePicker = UIImagePickerController()
     
@@ -30,6 +33,7 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        ref = FIRDatabase.database().reference()
         
         imagePicker.delegate = self
     }
@@ -60,22 +64,32 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func addPetProfile(_ sender: Any) {
         
-//        submitButton.isEnabled = false
+        submitButton.isEnabled = false
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        self.ref?.child("owner_profile").child(userID!)
+        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").childByAutoId()
+        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petName").setValue(self.petName.text)
+        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petAge").setValue(self.petAge.text)
+        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petBreed").setValue(self.petBreed.text)
+        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petDescription").setValue(self.petDescription.text)
         
         let imagesFolder = FIRStorage.storage().reference().child("images")
         let imageData = UIImageJPEGRepresentation(petPicImageView.image!, 0.1)!
-        
-        
+
         imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil, completion: {(metadata, error) in
             
             print("We tried to upload")
             if error != nil {
                 print("We had an error\(error)")
             }
+            
+            
         })
 
         
-//        dismiss(animated: true, completion: nil)
+       dismiss(animated: true, completion: nil)
         
     }
     

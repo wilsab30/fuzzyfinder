@@ -25,6 +25,8 @@
 		ECF9E7C41E2AF048003125FE /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7C31E2AF048003125FE /* MessagesViewController.swift */; };
 		ECF9E7C61E2D6D74003125FE /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7C51E2D6D74003125FE /* PetTableViewCell.swift */; };
 		ECF9E7C81E2D6DF4003125FE /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7C71E2D6DF4003125FE /* PetDetailsViewController.swift */; };
+		ECF9E7CC1E2FFAB2003125FE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF9E7CB1E2FFAB2003125FE /* MapKit.framework */; };
+		ECF9E7CE1E302F5B003125FE /* OwnerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9E7CD1E302F5B003125FE /* OwnerInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		ECF9E7C31E2AF048003125FE /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		ECF9E7C51E2D6D74003125FE /* PetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		ECF9E7C71E2D6DF4003125FE /* PetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
+		ECF9E7CB1E2FFAB2003125FE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ECF9E7CD1E302F5B003125FE /* OwnerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF9E7CC1E2FFAB2003125FE /* MapKit.framework in Frameworks */,
 				4890315EAB54059C8E6388EE /* Pods_FuzzyFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +73,7 @@
 		BB3DD92285D65F140D87C7F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9E7CB1E2FFAB2003125FE /* MapKit.framework */,
 				379FBF0557F8803878B0DB4E /* Pods_FuzzyFinder.framework */,
 			);
 			name = Frameworks;
@@ -104,6 +110,7 @@
 				ECF9E7C31E2AF048003125FE /* MessagesViewController.swift */,
 				ECF9E7851E21A188003125FE /* SignInViewController.swift */,
 				ECF9E7891E21D043003125FE /* OwnerProfileViewController.swift */,
+				ECF9E7CD1E302F5B003125FE /* OwnerInfoViewController.swift */,
 				ECF9E7C51E2D6D74003125FE /* PetTableViewCell.swift */,
 				ECF9E78B1E21E29E003125FE /* PetProfileViewController.swift */,
 				ECF9E7C71E2D6DF4003125FE /* PetDetailsViewController.swift */,
@@ -292,6 +299,7 @@
 				ECF9E78C1E21E29E003125FE /* PetProfileViewController.swift in Sources */,
 				ECF9E7771E1F306E003125FE /* FuzzyFinder.xcdatamodeld in Sources */,
 				ECF9E7C41E2AF048003125FE /* MessagesViewController.swift in Sources */,
+				ECF9E7CE1E302F5B003125FE /* OwnerInfoViewController.swift in Sources */,
 				ECF9E7931E26BB0E003125FE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
