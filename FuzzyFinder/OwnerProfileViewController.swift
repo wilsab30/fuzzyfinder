@@ -13,13 +13,14 @@ import Firebase
 
 class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var imageList = ["birdie.jpg","birdie.jpg","birdie.jpg"]
-    var nameList = ["Birdie", "Sammy", "Kao"]
-    var ageList = ["5", "3", "2"]
-    var descriptionList = ["the sweetest dog ever", "very shy, but sweet", "Will bite, don't approach"]
+    var imageList = [String]()
+    var nameList = [String]()
+    var ageList = [String]()
+    var descriptionList = [String]()
     
     
      var ref: FIRDatabaseReference?
+    var refhandle: UInt!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -33,26 +34,8 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
         tableView.dataSource = self
         tableView.layer.cornerRadius = 2
         
-        ref = FIRDatabase.database().reference()
-//        DataService.ds.REF_OWNER_PROFILE.observe(.value, with: { (snapshot) in
-//            
-//            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-//            
-//                for snap in snapshot {
-//                
-//                    print("Snap\(snap)")
-//                    if let ownerDataDict = snap.value as? Dictionary<String, Any>{
-//                        let key = snap.key
-//                        let owner_profile = OwnerData(ownerProfileId: key, ownerProfileData: ownerDataDict)
-//                        self.ownerProfiles.append(owner_profile)
-//                    
-//                    }
-//                
-//                }
-//            
-//            }
-//        })
         
+        ref = FIRDatabase.database().reference()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         

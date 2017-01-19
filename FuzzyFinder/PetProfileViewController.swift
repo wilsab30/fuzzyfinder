@@ -68,12 +68,12 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
         
         let userID = FIRAuth.auth()?.currentUser?.uid
         
-        self.ref?.child("owner_profile").child(userID!)
-        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").childByAutoId()
-        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petName").setValue(self.petName.text)
-        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petAge").setValue(self.petAge.text)
-        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petBreed").setValue(self.petBreed.text)
-        self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").child("petDescription").setValue(self.petDescription.text)
+
+        let newProfile = self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").childByAutoId()
+        newProfile?.child("petName").setValue(self.petName.text)
+        newProfile?.child("petAge").setValue(self.petAge.text)
+        newProfile?.child("petBreed").setValue(self.petBreed.text)
+        newProfile?.child("petDescription").setValue(self.petDescription.text)
         
         let imagesFolder = FIRStorage.storage().reference().child("images")
         let imageData = UIImageJPEGRepresentation(petPicImageView.image!, 0.1)!

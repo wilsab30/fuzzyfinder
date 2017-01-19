@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PetDetailsViewController: UIViewController {
 
@@ -16,45 +17,67 @@ class PetDetailsViewController: UIViewController {
     
     @IBOutlet var detailAge: UILabel!
     
+    
+    @IBOutlet var detailBreed: UILabel!
+    
     @IBOutlet var detailDescription: UITextView!
     
     var sentData1: String!
     var sentData2: String!
     var sentData3: String!
+    var sentData4: String!
+    
+    var ref: FIRDatabaseReference?
+    var refhandle: UInt!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailName.text = sentData1
-        detailAge.text = sentData2
-        detailImageView.image = UIImage(named: sentData3)
-        
-        self.navigationItem.title = sentData1
-        
-        if detailName.text == "Birdie" {
-        
-            detailDescription.text = "the sweetest dog ever"
-        }
-        
-        if detailName.text == "Sammy"{
+//        detailName.text = sentData1
+//        detailAge.text = sentData2
+//        detailImageView.image = UIImage(named: sentData3)
+//
+//        self.navigationItem.title = sentData1
+//        
+//        if detailName.text == "Birdie" {
+//        
+//            detailDescription.text = "the sweetest dog ever"
+//        }
+//        
+//        if detailName.text == "Sammy"{
+//            
+//            detailDescription.text = "very shy but sweet"
+//        }
+//        
+//        if detailName.text == "Kao"{
+//            
+//            detailDescription.text = "will bite, don't approach"
+//        }
+    
+        ref = FIRDatabase.database().reference()
+
+
+        let userID = (FIRAuth.auth()?.currentUser?.uid)!
+        ref?.child("owner_profiles").child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            let d = (snapshot.value! as! NSDictionary)
+            let profile = d["pet_profiles"] as! NSDictionary
+            let sentData1 = profile["petName"]! as! String
+            let sentData2 = profile["petAge"]! as! String
+            let sentData3 = profile["petDescription"]! as! String
+            let sentData4 = profile["petBreed"]! as! String
             
-            detailDescription.text = "very shy but sweet"
-        }
-        
-        if detailName.text == "Kao"{
+                    self.navigationItem.title = sentData1
+                    self.detailAge.text = sentData2
+                    self.detailDescription.text = sentData3
+                    self.detailBreed.text = sentData4 
             
-            detailDescription.text = "will bite, don't approach"
-        }
-
-
-
-        
+            
+            
+            
+            })
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
 
     /*
