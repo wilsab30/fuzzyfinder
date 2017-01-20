@@ -26,6 +26,7 @@ class PetDetailsViewController: UIViewController {
     var sentData2: String!
     var sentData3: String!
     var sentData4: String!
+    var sentData5: String!
     
     var ref: FIRDatabaseReference?
     var refhandle: UInt!
@@ -59,18 +60,22 @@ class PetDetailsViewController: UIViewController {
 
         let userID = (FIRAuth.auth()?.currentUser?.uid)!
         ref?.child("owner_profiles").child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-            let d = (snapshot.value! as! NSDictionary)
-            let profile = d["pet_profiles"] as! NSDictionary
-            let sentData1 = profile["petName"]! as! String
-            let sentData2 = profile["petAge"]! as! String
-            let sentData3 = profile["petDescription"]! as! String
-            let sentData4 = profile["petBreed"]! as! String
+            let d = (snapshot.value! as? NSDictionary)
+            let profiles = d?["pet_profiles"] as? NSDictionary
+            for profile in profiles!{
+                let profile_value = profile.value as! NSDictionary
+            let sentData1 = profile_value["petName"]! as! String
+            let sentData2 = profile_value["petAge"]! as! String
+            let sentData3 = profile_value["petDescription"]! as! String
+            let sentData4 = profile_value["petBreed"]! as! String
             
                     self.navigationItem.title = sentData1
                     self.detailAge.text = sentData2
                     self.detailDescription.text = sentData3
-                    self.detailBreed.text = sentData4 
+                    self.detailBreed.text = sentData4
+                    self.detailImageView.image = UIImage(named: self.sentData5)
             
+            }
             
             
             

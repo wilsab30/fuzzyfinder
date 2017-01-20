@@ -24,6 +24,7 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet var petAge: UITextField!
     
     @IBOutlet var submitButton: UIButton!
+    var imageUrl: FIRStorageReference?
      var ref: FIRDatabaseReference?
     
     var imagePicker = UIImagePickerController()
@@ -69,22 +70,31 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
         let userID = FIRAuth.auth()?.currentUser?.uid
         
 
-        let newProfile = self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").childByAutoId()
-        newProfile?.child("petName").setValue(self.petName.text)
-        newProfile?.child("petAge").setValue(self.petAge.text)
-        newProfile?.child("petBreed").setValue(self.petBreed.text)
-        newProfile?.child("petDescription").setValue(self.petDescription.text)
+        
         
         let imagesFolder = FIRStorage.storage().reference().child("images")
         let imageData = UIImageJPEGRepresentation(petPicImageView.image!, 0.1)!
+//        let metaData = FIRStorageMetadata()
+//        metaData.contentType = "image/jpg"
 
         imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil, completion: {(metadata, error) in
-            
+
+       
             print("We tried to upload")
             if error != nil {
                 print("We had an error\(error)")
             }
+//            let downloadURL = metaData.downloadURL()!.absoluteString
+            let newProfile = self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").childByAutoId()
+            newProfile?.child("petName").setValue(self.petName.text)
+            newProfile?.child("petAge").setValue(self.petAge.text)
+            newProfile?.child("petBreed").setValue(self.petBreed.text)
+            newProfile?.child("petDescription").setValue(self.petDescription.text)
+//            newProfile?.child("petImage").updateChildValues(["petImage": downloadURL])
             
+            //store downloadURL
+            
+            //store downloadURL at database
             
         })
 
@@ -94,7 +104,8 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     
+    
 
     
 
-}
+}//End of class

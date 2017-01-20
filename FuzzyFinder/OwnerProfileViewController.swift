@@ -13,14 +13,16 @@ import Firebase
 
 class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var imageList = [String]()
+    var imageList = ["birdie.jpg", "birdie.jpg"]
     var nameList = [String]()
     var ageList = [String]()
     var descriptionList = [String]()
+    var petNameData: String!
+    var petAgeData: String!
     
     
      var ref: FIRDatabaseReference?
-    var refhandle: UInt!
+     var refhandle: UInt!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -37,33 +39,58 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
         
         ref = FIRDatabase.database().reference()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
         
+       getData()
     }
     
+    
+    
 
     
+    
+    func getData() {
+    
+        let userID = (FIRAuth.auth()?.currentUser?.uid)!
+        ref?.child("owner_profiles").child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+        
+           let d = snapshot.value! as? NSDictionary
+          let profiles = d?["pet_profiles"] as? NSDictionary
+            for profile in profiles!{
+            let profile_value = profile.value as! NSDictionary
+            self.nameList.append(profile_value["petName"] as! String!)
+            self.ageList.append(profile_value["petAge"] as! String!)
+            }
+            self.tableView.reloadData()
+            
+        })
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "petCell", for: indexPath) as! PetTableViewCell
+        cell.cellName.text = nameList[indexPath.row]
+        cell.cellAge.text = ageList[indexPath.row]
+        cell.imageView?.image = UIImage(named: imageList[indexPath.row])
+        cell.cellName.textColor = UIColor(red: 255/255, green: 183/255, blue: 0/255, alpha: 1.0)
+        
+        
+        
+        
+        return cell
+        
+        
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return nameList.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-         let cell = tableView.dequeueReusableCell(withIdentifier: "petCell", for: indexPath) as! PetTableViewCell
-        
-        cell.cellName.text = nameList[indexPath.row]
-        cell.cellAge.text = ageList[indexPath.row]
-        cell.imageView?.image = UIImage(named: imageList[indexPath.row])
-        cell.cellName.textColor = UIColor(red: 255/255, green: 183/255, blue: 0/255, alpha: 1.0)
-        
-        return cell
-    }
 
+    
     
     @IBAction func logoutTouched(_ sender: Any) {
         
@@ -87,7 +114,7 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
                 DVC.sentData2 = age
                 
                 let image = imageList[IndexPath.row]
-                DVC.sentData3 = image
+                DVC.sentData5 = image
                 
             }
         }
