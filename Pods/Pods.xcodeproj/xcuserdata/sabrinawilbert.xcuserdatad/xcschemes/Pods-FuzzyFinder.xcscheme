@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCD7EA77EF46042A37659BA8288EB548"
+               BlueprintIdentifier = "41850E2322178CBC291FE76EE275E78A"
                BuildableName = "Pods_FuzzyFinder.framework"
                BlueprintName = "Pods-FuzzyFinder"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DCD7EA77EF46042A37659BA8288EB548"
+            BlueprintIdentifier = "41850E2322178CBC291FE76EE275E78A"
             BuildableName = "Pods_FuzzyFinder.framework"
             BlueprintName = "Pods-FuzzyFinder"
             ReferencedContainer = "container:Pods.xcodeproj">

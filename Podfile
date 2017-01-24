@@ -14,5 +14,6 @@ target 'FuzzyFinder' do
     pod 'FBSDKShareKit'
     pod 'FBSDKLoginKit'
     pod 'SwiftKeychainWrapper'
+    pod 'SDWebImage'
 
 end

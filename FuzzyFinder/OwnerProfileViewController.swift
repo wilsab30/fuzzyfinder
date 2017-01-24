@@ -9,16 +9,22 @@
 import UIKit
 import SwiftKeychainWrapper
 import Firebase
+import SDWebImage
 
 
 class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var imageList = ["birdie.jpg", "birdie.jpg"]
+    var imageList = [Data]()
+    var imageUrlList = [String]()
     var nameList = [String]()
     var ageList = [String]()
     var descriptionList = [String]()
     var petNameData: String!
     var petAgeData: String!
+    var downloadUrl: URL!
+    var url: String!
+    
+    
     
     
      var ref: FIRDatabaseReference?
@@ -55,13 +61,26 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
         
            let d = snapshot.value! as? NSDictionary
           let profiles = d?["pet_profiles"] as? NSDictionary
+            if profiles != nil {
             for profile in profiles!{
             let profile_value = profile.value as! NSDictionary
             self.nameList.append(profile_value["petName"] as! String!)
             self.ageList.append(profile_value["petAge"] as! String!)
-            }
+            self.url = profile_value["petImageUrl"] as! String!
+               if let downloadUrl = URL(string: self.url!) {
+                    do {
+                        let imageData = try Data(contentsOf: downloadUrl)
+                        self.imageList.append(imageData)
+                    } catch {
+                        print("contents could not be loaded")
+                    }
+                } else {
+                    print("the URL was bad!")
+                }
+                
+                }
             self.tableView.reloadData()
-            
+            }
         })
     }
     
@@ -70,15 +89,11 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "petCell", for: indexPath) as! PetTableViewCell
         cell.cellName.text = nameList[indexPath.row]
         cell.cellAge.text = ageList[indexPath.row]
-        cell.imageView?.image = UIImage(named: imageList[indexPath.row])
+        
+        cell.imageView?.image = UIImage.sd_image(with: imageList[indexPath.row])
         cell.cellName.textColor = UIColor(red: 255/255, green: 183/255, blue: 0/255, alpha: 1.0)
         
-        
-        
-        
         return cell
-        
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -113,8 +128,8 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
                 let age = ageList[IndexPath.row] as String
                 DVC.sentData2 = age
                 
-                let image = imageList[IndexPath.row]
-                DVC.sentData5 = image
+//                let image = imageList[IndexPath.row]
+//                DVC.sentData5 = image
                 
             }
         }

@@ -23,6 +23,8 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBOutlet var petAge: UITextField!
     
+    var petImageUrl: Any!
+    
     @IBOutlet var submitButton: UIButton!
     var imageUrl: FIRStorageReference?
      var ref: FIRDatabaseReference?
@@ -55,7 +57,7 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .savedPhotosAlbum
         present(imagePicker, animated: true, completion: nil)
         
         
@@ -78,27 +80,23 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
 //        metaData.contentType = "image/jpg"
 
         imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil, completion: {(metadata, error) in
-
-       
-            print("We tried to upload")
+            
+            let downloadURL = metadata!.downloadURL()
+            let downloadString = downloadURL?.absoluteString
             if error != nil {
                 print("We had an error\(error)")
-            }
+            } else {
 //            let downloadURL = metaData.downloadURL()!.absoluteString
             let newProfile = self.ref?.child("owner_profiles").child("users").child(userID!).child("pet_profiles").childByAutoId()
             newProfile?.child("petName").setValue(self.petName.text)
             newProfile?.child("petAge").setValue(self.petAge.text)
             newProfile?.child("petBreed").setValue(self.petBreed.text)
             newProfile?.child("petDescription").setValue(self.petDescription.text)
-//            newProfile?.child("petImage").updateChildValues(["petImage": downloadURL])
-            
-            //store downloadURL
-            
-            //store downloadURL at database
-            
+            newProfile?.child("petImageUrl").setValue(downloadString)
+            }
         })
 
-        
+    
        dismiss(animated: true, completion: nil)
         
     }

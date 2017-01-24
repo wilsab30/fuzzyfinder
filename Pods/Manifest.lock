@@ -58,6 +58,9 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
@@ -68,6 +71,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - SDWebImage
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
@@ -86,8 +90,9 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 5f512ba4e81d78d7e876ccceec98887d73d4a9c6
+PODFILE CHECKSUM: 44ec55745779f9322aa5f4faa82037cc9880503c
 
 COCOAPODS: 1.1.1

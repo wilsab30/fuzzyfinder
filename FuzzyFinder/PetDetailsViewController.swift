@@ -69,6 +69,7 @@ class PetDetailsViewController: UIViewController {
             let sentData3 = profile_value["petDescription"]! as! String
             let sentData4 = profile_value["petBreed"]! as! String
             
+            
                     self.navigationItem.title = sentData1
                     self.detailAge.text = sentData2
                     self.detailDescription.text = sentData3
