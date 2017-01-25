@@ -29,7 +29,7 @@ class ComposeViewController: UIViewController {
         ref?.child("Post").childByAutoId().setValue(textView.text)
         
         //Dimiss the popover
-        presentedViewController?.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
         
     }
@@ -39,7 +39,7 @@ class ComposeViewController: UIViewController {
     @IBAction func cancelPost(_ sender: Any) {
         
         //Dimiss the popover
-        presentedViewController?.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     

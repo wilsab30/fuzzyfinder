@@ -98,10 +98,31 @@ class PetProfileViewController: UIViewController, UIImagePickerControllerDelegat
 
     
        dismiss(animated: true, completion: nil)
+    
         
     }
     
     
+    @IBAction func petNameDismiss(_ sender: Any) {
+        self.resignFirstResponder()
+    }
+    
+    
+    @IBAction func petAgeDismiss(_ sender: Any) {
+        self.resignFirstResponder()
+    }
+    
+    
+    @IBAction func petBreed(_ sender: Any) {
+        self.resignFirstResponder()
+    }
+    
+    
+    
+    
+    @IBAction func petDescriptionDismiss(_ sender: Any) {
+        self.resignFirstResponder()
+    }
     
 
     

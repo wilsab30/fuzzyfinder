@@ -69,6 +69,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
 
        
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+
+        
+    }
     
          
     @IBAction func locateMe(_ sender: Any) {

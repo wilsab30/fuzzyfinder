@@ -17,16 +17,22 @@ class PetDetailsViewController: UIViewController {
     
     @IBOutlet var detailAge: UILabel!
     
+    @IBOutlet var petStatus: UISegmentedControl!
     
     @IBOutlet var detailBreed: UILabel!
     
     @IBOutlet var detailDescription: UITextView!
     
+    
+    @IBOutlet var petSegmentControl: UISegmentedControl!
+    @IBOutlet var messageNavBar: UINavigationBar!
+    
+    
     var sentData1: String!
     var sentData2: String!
     var sentData3: String!
     var sentData4: String!
-    var sentData5: String!
+    var sentData5: Data!
     
     var ref: FIRDatabaseReference?
     var refhandle: UInt!
@@ -34,26 +40,6 @@ class PetDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        detailName.text = sentData1
-//        detailAge.text = sentData2
-//        detailImageView.image = UIImage(named: sentData3)
-//
-//        self.navigationItem.title = sentData1
-//        
-//        if detailName.text == "Birdie" {
-//        
-//            detailDescription.text = "the sweetest dog ever"
-//        }
-//        
-//        if detailName.text == "Sammy"{
-//            
-//            detailDescription.text = "very shy but sweet"
-//        }
-//        
-//        if detailName.text == "Kao"{
-//            
-//            detailDescription.text = "will bite, don't approach"
-//        }
     
         ref = FIRDatabase.database().reference()
 
@@ -74,26 +60,32 @@ class PetDetailsViewController: UIViewController {
                     self.detailAge.text = sentData2
                     self.detailDescription.text = sentData3
                     self.detailBreed.text = sentData4
-                    self.detailImageView.image = UIImage(named: self.sentData5)
+                    self.detailImageView.image = UIImage.sd_image(with: self.sentData5)
             
             }
             
             
             
             })
+        
     }
 
 
+    @IBAction func petStatusChanged(_ sender: Any) {
+        
+        if petSegmentControl.selectedSegmentIndex == 0 {
+        
+                messageNavBar.isHidden = true
+        
+        } else {
+        
+            messageNavBar.isHidden = false
+        
+        }
+        
+        
+    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+    
+}//End of class

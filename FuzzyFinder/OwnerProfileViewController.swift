@@ -47,6 +47,7 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
        getData()
+        
     }
     
     
@@ -128,8 +129,9 @@ class OwnerProfileViewController: UIViewController, UITableViewDelegate, UITable
                 let age = ageList[IndexPath.row] as String
                 DVC.sentData2 = age
                 
-//                let image = imageList[IndexPath.row]
-//                DVC.sentData5 = image
+                let image = imageList[IndexPath.row]
+            
+               DVC.sentData5 = image
                 
             }
         }

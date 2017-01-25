@@ -86,7 +86,13 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate{
         }
     }
 
+    @IBAction func emailDimissKey(_ sender: Any) {
+        self.resignFirstResponder()
+    }
     
+    @IBAction func passwordDismissKey(_ sender: Any) {
+        self.resignFirstResponder()
+    }
     
     
     @IBAction func submitButton(_ sender: Any) {
